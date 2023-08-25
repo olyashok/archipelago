@@ -7,11 +7,11 @@ import { registerLicense } from '@syncfusion/ej2-base';
 import { DataManager, Query, UrlAdaptor } from '@syncfusion/ej2-data';
 import { AppBarComponent, MenuComponent } from '@syncfusion/ej2-react-navigations';
 import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
-import { GridComponent, ColumnsDirective, ColumnDirective, Reorder, Inject } from '@syncfusion/ej2-react-grids';
+import { GridComponent, ColumnsDirective, ColumnDirective, Reorder, Inject, Page, Selection, Inject, Edit, Toolbar, Sort } from '@syncfusion/ej2-react-grids';
 
 registerLicense('ORg4AjUWIQA/Gnt2V1hiQlRPf0BAWXxLflF1VWFTfll6dFdWACFaRnZdQV1rS3tSckRrWn5ecn1U');
 
-import { data } from "./data";
+import { tasks } from "./data";
 
 const mainMenuItems = [
     {
@@ -47,18 +47,23 @@ const AppBar = () => {
 export default AppBar;
 
 function Tasks() {
+    const selectionsettings = { persistSelection: true };
+    let gridInstance;
+    const toolbarOptions = ['New', 'Complete', 'Assign'];
+    const editSettings = { allowDeleting: true };
     return (
         <div className='control-pane'>
             <div className='control-section'>
-                <GridComponent dataSource={data} allowReordering={true}>
+                <GridComponent dataSource={tasks} allowReordering={true} ref={grid => gridInstance = grid} enableHover={false} allowPaging={true} pageSettings={{ pageCount: 5 }} selectionSettings={selectionsettings} toolbar={toolbarOptions} editSettings={editSettings} allowSorting={true}>
                     <ColumnsDirective>
-                        <ColumnDirective field='EmployeeID' headerText='Employee ID' width='120' textAlign="Right"></ColumnDirective>
-                        <ColumnDirective field='FirstName' headerText='Name' width='140'></ColumnDirective>
-                        <ColumnDirective field='Title' headerText='Title' width='170' />
-                        <ColumnDirective field='HireDate' headerText='Hired Date' width='120' format='yMd' textAlign="Right" />
-                        <ColumnDirective field='ReportsTo' headerText='Reports To' width='120'></ColumnDirective>
+                        <ColumnDirective type='checkbox' width='50'></ColumnDirective>
+                        <ColumnDirective field='status' headerText='Status'/>
+                        <ColumnDirective field='title' headerText='Task' width='340'/>
+                        <ColumnDirective field='assignedTo' headerText='Owner'/>
+                        <ColumnDirective field='created' headerText='Created'/>
+                        <ColumnDirective field='lastUpdated' headerText='Last Updated'/>
                     </ColumnsDirective>
-                    <Inject services={[Reorder]} />
+                    <Inject services={[Selection, Toolbar, Sort]}/>
                 </GridComponent>
             </div>
         </div>
