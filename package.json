@@ -1,0 +1,36 @@
+{
+  "name": "mlwdur--run",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@syncfusion/ej2-base": "22.2.10",
+    "@syncfusion/ej2-buttons": "22.2.9",
+    "@syncfusion/ej2-compression": "22.2.5",
+    "@syncfusion/ej2-data": "22.2.5",
+    "@syncfusion/ej2-documenteditor": "22.2.10",
+    "@syncfusion/ej2-file-utils": "22.2.5",
+    "@syncfusion/ej2-icons": "22.2.5",
+    "@syncfusion/ej2-lists": "22.2.9",
+    "@syncfusion/ej2-maps": "22.2.8",
+    "@syncfusion/ej2-navigations": "22.2.8",
+    "@syncfusion/ej2-pdf-export": "22.2.5",
+    "@syncfusion/ej2-react-base": "22.2.5",
+    "@syncfusion/ej2-react-buttons": "^22.2.9",
+    "@syncfusion/ej2-react-grids": "22.2.10",
+    "@syncfusion/ej2-react-maps": "22.2.8",
+    "@syncfusion/ej2-react-navigations": "^22.2.8",
+    "@syncfusion/ej2-splitbuttons": "22.2.8",
+    "@syncfusion/ej2-svg-base": "22.2.8",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-scripts": "latest"
+  }
+}
