@@ -15,10 +15,19 @@ import { tasks } from "./data";
 
 const mainMenuItems = [
     {
-        text: 'Clients'
+        text: 'My Clients'
     },
     {
-        text: 'SOV'
+        text: 'SOVs'
+    },
+    {
+        text: 'Grade'
+    },
+    {
+        text: 'Enrich'
+    },
+    {
+        text: 'Engage'
     },
     {
         text: "Tasks"
